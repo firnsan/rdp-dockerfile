@@ -19,4 +19,4 @@ RUN buildDeps='wget unzip gcc g++ make cmake libcurl4-openssl-dev libncurses5-de
     && rm -r /usr/src/RDP-master \
     && apt-get purge -y --auto-remove $buildDeps
 
-CMD bash
+CMD ["bash"]
