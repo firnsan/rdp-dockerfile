@@ -1,8 +1,9 @@
 FROM debian:jessie
 
-RUN buildDeps='wget unzip gcc g++ make cmake libcurl4-openssl-dev libncurses5-dev bison python libbz2-dev' \
+RUN buildDeps='wget unzip gcc g++ make cmake libncurses5-dev bison python libbz2-dev' \
     && apt-get update \
     && apt-get install -y $buildDeps \
+    && apt-get install -y libcurl4-openssl-dev mysql-client \
     && wget -O rdp.zip "https://github.com/vipshop/RDP/archive/master.zip" \
     && mkdir -p /usr/src \
     && unzip rdp.zip -d /usr/src \
