@@ -12,8 +12,7 @@ RUN buildDeps='wget unzip gcc g++ make cmake libncurses5-dev bison python libbz2
     && make -C /usr/src/RDP-master install \
     && mkdir -p /apps/svr/rdp_syncer/base/rdp_mysql \
     && mkdir -p /apps/svr/rdp_syncer/data/instance0/conf \
-    && cp -r /usr/src/RDP-master/package/*.tgz /apps/svr/rdp_syncer/base/ \
-    && tar -xzvf /apps/svr/rdp_syncer/base/*.tgz -C /apps/svr/rdp_syncer/base/rdp_mysql \
+    && tar -xzvf /usr/src/RDP-master/package/*.tgz -C /apps/svr/rdp_syncer/base/rdp_mysql \
     && cp /apps/svr/rdp_syncer/base/rdp_mysql/syncer.cfg.example /apps/svr/rdp_syncer/data/instance0/conf/syncer.cfg \
     && rm -rf /var/lib/apt/lists/* \
     && rm rdp.zip \
